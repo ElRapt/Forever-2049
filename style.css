@@ -1,0 +1,97 @@
+/* Base styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Orbitron', sans-serif; /* Cyberpunk-style font */
+  background: linear-gradient(315deg, #1a1a2e 0%, #16213e 74%); /* Gradient background */
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Problem section styling */
+.problem-section {
+  flex-basis: 50%;
+  background: rgba(40, 40, 70, 0.9); /* Dark translucent background */
+  padding: 2rem;
+  overflow-y: auto; /* Allows scrolling */
+  border-right: 3px solid #ff007f; /* Neon pink border */
+}
+
+.problem-section h1,
+.problem-section h2 {
+  text-shadow: 0 0 5px #ff007f, 0 0 15px #ff007f; /* Neon pink glow */
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.problem-section p {
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Editor section styling */
+.editor-section {
+  flex-basis: 50%;
+  background: #0d1b2a; /* Deep blue background */
+  padding: 2rem;
+}
+
+#code-editor {
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+  background-color: #001233;
+  color: #00ffea; /* Neon blue text color */
+  padding: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  border: 1px solid #ff007f; /* Neon pink border */
+  resize: none;
+}
+
+#submit-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 2rem;
+  border: 1px solid #00ffea; /* Neon blue border */
+  background-color: #ff007f; /* Neon pink background */
+  color: #001233; /* Deep blue text color */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#submit-btn:hover {
+  background-color: #00ffea; /* Neon blue background */
+  color: #001233;
+  transform: translateY(-2px); /* Button lift effect */
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f; /* Neon pink glow */
+  }
+  to {
+    text-shadow: 0 0 15px #ff007f, 0 0 25px #ff007f, 0 0 35px #ff007f; /* Stronger neon pink glow */
+  }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .problem-section,
+  .editor-section {
+    flex-basis: 100%;
+  }
+  
+  #code-editor {
+    height: 50vh;
+  }
+}
