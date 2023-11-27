@@ -95,3 +95,79 @@ body, html {
     height: 50vh;
   }
 }
+
+/* LOADING ANIMATION */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling during load */
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.logo {
+  width: 500px;
+  height: 500px;
+  background-image: url('forever2049logo.png'); /* Adjust with the path to your logo */
+  background-size: cover;
+  filter: hue-rotate(0deg); /* Start with normal colors */
+  animation: flickerAnimation 5s infinite, hueRotateAnimation 10s infinite;
+}
+
+/* Flickering animation */
+@keyframes flickerAnimation {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Color shift animation */
+@keyframes hueRotateAnimation {
+  0%   { filter: hue-rotate(0deg); }
+  50%  { filter: hue-rotate(360deg); }
+  100% { filter: hue-rotate(0deg); }
+}
+
+/* Glitch effect */
+.glitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('forever2049logo.png'); /* Adjust with the path to your logo */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  animation: glitchAnimation 1s infinite;
+}
+
+@keyframes glitchAnimation {
+  0% {
+    clip: rect(0, 900px, 100px, 0);
+    transform: translate(0, 0);
+  }
+  10% {
+    clip: rect(0, 900px, 100px, 0);
+    transform: translate(-20px, 0);
+  }
+  /* ... Continue to add keyframes for glitch effect ... */
+  100% {
+    clip: rect(0, 900px, 100px, 0);
+    transform: translate(0, 0);
+  }
+}
