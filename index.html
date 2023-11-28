@@ -45,16 +45,23 @@
 
     <div class="container">
         <div class="problem-section">
-            <h1>Problem #8765. Cyberlink Breach</h1>
-            <p>In the neon-drenched alleys of Neo-Paris, a rogue AI has corrupted the Cyberlink network. Your task is to restore the data flow by solving the network's algorithmic puzzles.</p>
-            <h2>Challenge: Data Stream Alignment</h2>
-            <p>The data stream is represented as a sequence of integers, but the flow is disrupted. Find the sequence's missing number that will re-establish the connection.</p>
-            <p><strong>Input:</strong> A shuffled array containing numbers 1 through n, missing one number.</p>
-            <p><strong>Output:</strong> The missing number.</p>
-            <p><strong>Example:</strong></p>
-            <p>Input: [5, 3, 1, 4]</p>
-            <p>Output: 2</p>
-            <p>Write a function that takes in the array and returns the missing number.</p>
+            <div class="problem_title bg-purple cyber-tile-big">
+              <h1 class="cyber-h">Problem #8765. Cyberlink Breach</h1>
+              <p>In the neon-drenched alleys of Neo-Paris, a rogue AI has corrupted the Cyberlink network. Your task is to restore the data flow by solving the network's algorithmic puzzles.</p>
+            </div>
+
+            <div class="problem_details">
+              <h3 class="cyber-h cyber-glitch-4">Challenge: Data Stream Alignment</h2>
+              <p>The data stream is represented as a sequence of integers, but the flow is disrupted. Find the sequence's missing number that will re-establish the connection.</p>
+              <p><strong>Input:</strong> A shuffled array containing numbers 1 through n, missing one number.</p>
+              <p><strong>Output:</strong> The missing number.</p>
+              <div class="cyber-tile-small bg-green cyber-glitch-2">
+                <p><strong>Example:</strong></p>
+                <p>Input: [5, 3, 1, 4]</p>
+                <p>Output: 2</p>
+              </div>
+              <p>Write a function that takes in the array and returns the missing number.</p>
+            </div>
         </div>
 
         <div class="editor-section bg-blue">
@@ -65,12 +72,7 @@
                 <option value="go">Go</option>
             </select>
           </div>
-            <textarea id="code-editor" class="cyber-tile-big">class Solution(object): 
-               def numberOfWays(self, corridor): 
-               """ 
-               :type corridor: str 
-               :rtype: int 
-               """ </textarea>
+            <textarea id="code-editor" class="box"></textarea>
 
         <a href="/loot.html">
           <button id="submit-btn" class="cybr-btn">
@@ -126,9 +128,9 @@
     const codeEditor = document.getElementById('code-editor');
 
     const defaultCode = {
-      'python': 'class Solution(object): \n def numberOfWays(self, corridor): \n """ \n:type corridor: str \n :rtype: int \n""" ',
-        'c++': 'class Solution { \n public: \n int numberOfWays(string corridor) { \n \n } \n };',
-        'go': 'func numberOfWays(corridor string) int { \n \n }'
+      'python': 'class Solution(object): \n def dataStream(self, corridor): \n """ \n:type corridor: str \n :rtype: int \n""" ',
+        'c++': 'class Solution { \n public: \n int dataStream(string corridor) { \n \n } \n };',
+        'go': 'func dataStream(corridor string) int { \n \n }'
     };
 
     languageSelect.addEventListener('change', function() {
