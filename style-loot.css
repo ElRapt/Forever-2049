@@ -1,0 +1,95 @@
+/* Base styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(315deg, #1a1a2e 0%, #16213e 74%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .top-bar {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    background: rgba(20, 20, 40, 0.85);
+  }
+  
+  .game-button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: #ff007f; /* Neon pink */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .game-button:hover {
+    background-color: #00ffea; /* Neon blue */
+    transform: scale(1.1);
+  }
+  
+  .credits {
+    margin: 1rem 0;
+  }
+  
+  .credits-amount {
+    font-size: 2rem;
+    color: #ff007f; /* Neon pink */
+  }
+  
+  .tech-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .tech-card {
+    background: rgba(40, 40, 70, 0.9);
+    border: 1px solid #ff007f; /* Neon pink */
+    padding: 2rem;
+    margin: 1rem;
+    width: calc(33% - 2rem);
+    cursor: pointer;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+  }
+  
+  .tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(255, 0, 127, 0.7);
+  }
+  
+  .tech-card h2 {
+    color: #00ffea; /* Neon blue */
+    text-shadow: 0 0 5px #00ffea;
+  }
+  
+  .tech-card h3 {
+    color: #ff007f; /* Neon pink */
+    text-shadow: 0 0 5px #ff007f;
+  }
+  
+  .tech-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .tech-container {
+      flex-direction: column;
+    }
+    
+    .tech-card {
+      width: 80%;
+    }
+  }
+  

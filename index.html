@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forever 2049 - Coding Challenge</title>
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="cyberpunk.css" /> <!-- DOC: https://www.cssscript.com/demo/cyberpunk-2077/ -->
+    <link rel="stylesheet" href="cyberpunk.css" /> 
+    <!-- DOC: https://www.cssscript.com/demo/cyberpunk-2077/ -->
+    <link rel="stylesheet" href="cyberpunk2.css" /> 
+    <!-- DOC: https://github.com/gwannon/Cyberpunk-2077-theme-css -->
     <link rel="stylesheet" href="style.css">
     <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -39,7 +42,7 @@
 
     <div class="container">
         <div class="problem-section">
-            <h1>Cyberlink Breach</h1>
+            <h1>Problem #8765. Cyberlink Breach</h1>
             <p>In the neon-drenched alleys of Neo-Paris, a rogue AI has corrupted the Cyberlink network. Your task is to restore the data flow by solving the network's algorithmic puzzles.</p>
             <h2>Challenge: Data Stream Alignment</h2>
             <p>The data stream is represented as a sequence of integers, but the flow is disrupted. Find the sequence's missing number that will re-establish the connection.</p>
@@ -50,13 +53,23 @@
             <p>Output: 2</p>
             <p>Write a function that takes in the array and returns the missing number.</p>
         </div>
-        <div class="editor-section">
+
+        <div class="editor-section bg-blue">
+          <div class="cyberpunk lang-select">
+            <select>
+                <option value="python">Python</option>
+                <option value="c++">C++</option>
+                <option value="go">Go</option>
+            </select>
+          </div>
             <textarea id="code-editor" class="cyber-tile-big">// Type your code here...</textarea>
 
-            <button id="submit-btn" class="cybr-btn">
-              SUBMIT<span aria-hidden>_</span>
-              <span aria-hidden class="cybr-btn__glitch">SUBMIT 💀</span>
-            </button>
+        <a href="/loot.html">
+          <button id="submit-btn" class="cybr-btn">
+            SUBMIT<span aria-hidden>_</span>
+            <span aria-hidden class="cybr-btn__glitch">SUBMIT 💀</span>
+          </button>
+        </a>
 
         </div>
     </div>
@@ -72,7 +85,7 @@
         setTimeout(function() {
           loader.style.display = 'none';
         }, 1000); // This matches the duration of the fade-out transition
-      }, 5000); // Display the fake loading screen for 5 seconds, adjust as needed
+      }, 4000); // Display the fake loading screen for 4 seconds, adjust as needed
       
       setTimeout(function() {
       const loader = document.querySelector('.spinny-loader');
@@ -82,24 +95,22 @@
       setTimeout(function() {
         loader.style.display = 'none';
       }, 1000);
-    }, 5000); // Duration before the fake loader disappears
+    }, 4000); // Duration before the fake loader disappears
 
-    // Function to simulate loading progress
     function simulateLoading() {
       const loadingNumber = document.querySelector('.loading-number');
-      let progress = 0; // Start at 0
+      let progress = 0; 
 
       // Update progress every 30ms
       const interval = setInterval(() => {
         progress++; // Increment progress
-        loadingNumber.style.setProperty('--num', progress); // Update CSS variable
-        loadingNumber.textContent = `${progress}%`; // Update text content
+        loadingNumber.style.setProperty('--num', progress); 
+        loadingNumber.textContent = `${progress}%`; 
 
-        if (progress >= 100) clearInterval(interval); // Clear interval at 100%
-      }, 30); // Adjust the interval as needed
+        if (progress >= 100) clearInterval(interval); 
+      }, 30); 
     }
 
-    // Start the simulation when the document is ready
     document.addEventListener('DOMContentLoaded', simulateLoading);
 
     </script>

@@ -38,8 +38,12 @@ body, html {
 /* Editor section styling */
 .editor-section {
   flex-basis: 50%;
-  background: #0d1b2a; /* Deep blue background */
+  /* background: #0d1b2a;  */
   padding: 2rem;
+}
+
+.lang-select {
+  width: 10vw;
 }
 
 #code-editor {
