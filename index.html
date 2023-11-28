@@ -52,10 +52,12 @@
 
             <div class="problem_details">
               <h3 class="cyber-h cyber-glitch-4">Challenge: Data Stream Alignment</h2>
-              <p>The data stream is represented as a sequence of integers, but the flow is disrupted. Find the sequence's missing number that will re-establish the connection.</p>
-              <p><strong>Input:</strong> A shuffled array containing numbers 1 through n, missing one number.</p>
-              <p><strong>Output:</strong> The missing number.</p>
-              <div class="cyber-tile-small bg-green cyber-glitch-2">
+                
+                <p>The data stream is represented as a sequence of integers, but the flow is disrupted. Find the sequence's missing number that will re-establish the connection.</p>
+                <p><strong>Input:</strong> A shuffled array containing numbers 1 through n, missing one number.</p>
+                <p><strong>Output:</strong> The missing number.</p>
+
+              <div class="cyber-tile-small bg-green">
                 <p><strong>Example:</strong></p>
                 <p>Input: [5, 3, 1, 4]</p>
                 <p>Output: 2</p>
@@ -64,13 +66,18 @@
             </div>
         </div>
 
-        <div class="editor-section bg-blue">
-          <div class="cyberpunk lang-select">
-            <select id="language-select">
-                <option value="python">Python</option>
-                <option value="c++">C++</option>
-                <option value="go">Go</option>
-            </select>
+        <div class="editor-section ">
+          <div class="editor-upper">
+            <div class="cyberpunk lang-select">
+              <select id="language-select">
+                  <option value="python">Python</option>
+                  <option value="c++">C++</option>
+                  <option value="go">Go</option>
+              </select>
+            </div>
+            <div id="timer" class="cyber-tile-small cyber-glitch-2 bg-red">
+              <p class="glitch-3">01:00:00</p>
+            </div>
           </div>
             <textarea id="code-editor" class="box"></textarea>
 
@@ -138,7 +145,36 @@
     });
 });
 
+// Set the date we're counting down to
+var countDownDate = new Date();
+countDownDate.setHours(countDownDate.getHours() + 1); // 1 hour from now
 
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for hours, minutes and seconds
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="timer"
+  document.getElementById("timer").innerHTML = 
+    (hours < 10 ? "0" : "") + hours + ":" +
+    (minutes < 10 ? "0" : "") + minutes + ":" +
+    (seconds < 10 ? "0" : "") + seconds;
+
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
 
     </script>
 </body>
