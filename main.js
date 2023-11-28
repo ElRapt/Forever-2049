@@ -24,20 +24,3 @@ document.querySelector('#app').innerHTML = `
 setupCounter(document.querySelector('#counter'))
 
 
-
-// Set a timeout to keep the fake loader for a specific amount of time
-setTimeout(function() {
-  const loader = document.querySelector('.loader-container');
-  // Begin the fade-out
-  loader.style.transition = 'opacity 1s ease';
-  loader.style.opacity = '0';
-
-  // Wait for the transition to end before clearing the HTML content of the loader from the DOM
-  setTimeout(function() {
-    // Clears the inner HTML, effectively "deleting" the loader content
-    loader.innerHTML = '';
-    // Optionally hide the container after clearing content
-    loader.style.display = 'none';
-  }, 1000); // This matches the duration of the fade-out transition
-}, 50); // Display the fake loading screen for 5 seconds, adjust as needed
-

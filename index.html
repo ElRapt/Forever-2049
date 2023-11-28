@@ -13,8 +13,28 @@
 <body>
 
   <div class="loader-container">
-    <div class="logo"></div>
-    <div class="glitch"></div>
+    <img src="/forever2049logo.png" alt="logo" class="loader-logo cyber-glitch-0 cyber-glitch-1">
+    
+    <div class="container_loader">
+      <div id='loader'>
+        <div id='title' class='flex'>
+          <p class='loading-text'>LOADING</p>
+          <div class='therefore'>∴</div>
+          <p class="loading-number">%</p>
+        </div>
+        <div id='loading-bar-border'>
+          <div class='loading-bar'>
+          </div>
+        </div>
+        <div id='warning'>
+          <p>
+            <div class='exclamation'>!</div>
+            &nbsp; CAUTION, Do not turn off.
+          </p>
+        <div id='line-cascates'></div>
+        </div>
+      </div>
+    </div>
   </div>
 
     <div class="container">
@@ -63,6 +83,24 @@
         loader.style.display = 'none';
       }, 1000);
     }, 5000); // Duration before the fake loader disappears
+
+    // Function to simulate loading progress
+    function simulateLoading() {
+      const loadingNumber = document.querySelector('.loading-number');
+      let progress = 0; // Start at 0
+
+      // Update progress every 30ms
+      const interval = setInterval(() => {
+        progress++; // Increment progress
+        loadingNumber.style.setProperty('--num', progress); // Update CSS variable
+        loadingNumber.textContent = `${progress}%`; // Update text content
+
+        if (progress >= 100) clearInterval(interval); // Clear interval at 100%
+      }, 30); // Adjust the interval as needed
+    }
+
+    // Start the simulation when the document is ready
+    document.addEventListener('DOMContentLoaded', simulateLoading);
 
     </script>
 </body>
