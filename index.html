@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="style.css">
     <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
 <body>
 
   <div class="loader-container">
@@ -56,13 +59,18 @@
 
         <div class="editor-section bg-blue">
           <div class="cyberpunk lang-select">
-            <select>
+            <select id="language-select">
                 <option value="python">Python</option>
                 <option value="c++">C++</option>
                 <option value="go">Go</option>
             </select>
           </div>
-            <textarea id="code-editor" class="cyber-tile-big">// Type your code here...</textarea>
+            <textarea id="code-editor" class="cyber-tile-big">class Solution(object): 
+               def numberOfWays(self, corridor): 
+               """ 
+               :type corridor: str 
+               :rtype: int 
+               """ </textarea>
 
         <a href="/loot.html">
           <button id="submit-btn" class="cybr-btn">
@@ -112,6 +120,23 @@
     }
 
     document.addEventListener('DOMContentLoaded', simulateLoading);
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const languageSelect = document.getElementById('language-select');
+    const codeEditor = document.getElementById('code-editor');
+
+    const defaultCode = {
+      'python': 'class Solution(object): \n def numberOfWays(self, corridor): \n """ \n:type corridor: str \n :rtype: int \n""" ',
+        'c++': 'class Solution { \n public: \n int numberOfWays(string corridor) { \n \n } \n };',
+        'go': 'func numberOfWays(corridor string) int { \n \n }'
+    };
+
+    languageSelect.addEventListener('change', function() {
+        codeEditor.value = defaultCode[this.value];
+    });
+});
+
+
 
     </script>
 </body>
