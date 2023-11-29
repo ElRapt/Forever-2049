@@ -70,8 +70,8 @@
           <div class="editor-upper">
             <div class="cyberpunk lang-select">
               <select id="language-select">
-                  <option value="python">Python</option>
-                  <option value="c++">C++</option>
+                  <option value="java">Java</option>
+                  <option value="javascript">Javascript</option>
                   <option value="go">Go</option>
               </select>
             </div>
@@ -79,7 +79,14 @@
               <p class="glitch-3">01:00:00</p>
             </div>
           </div>
-            <textarea id="code-editor" class="box"></textarea>
+            <textarea id="code-editor" class="box">
+              public class Solution { 
+                // you need to treat n as an unsigned value 
+                public int hammingWeight(int n) { 
+                } 
+                } 
+
+            </textarea>
 
         <a href="/loot.html">
           <button id="submit-btn" class="cybr-btn">
@@ -135,8 +142,8 @@
     const codeEditor = document.getElementById('code-editor');
 
     const defaultCode = {
-      'python': 'class Solution(object): \n def dataStream(self, corridor): \n """ \n:type corridor: str \n :rtype: int \n""" ',
-        'c++': 'class Solution { \n public: \n int dataStream(string corridor) { \n \n } \n };',
+      'java': 'public class Solution { \n // you need to treat n as an unsigned value \n public int hammingWeight(int n) { \n } \n } ',
+        'javascript': '/** \n * @param {number} n - a positive integer \n * @return {number} \n */ \n var hammingWeight = function(n) { \n };',
         'go': 'func dataStream(corridor string) int { \n \n }'
     };
 
